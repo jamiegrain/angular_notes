@@ -1,0 +1,76 @@
+@import './colours.scss';
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-light;
+    min-height: 100vh;
+    margin: 0;
+}
+
+#mainContainer {
+    width: clamp(300px, 80vw, 1000px);
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $background-dark;
+}
+
+#notesContainer {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2em;
+    row-gap: 2em;
+}
+
+app-note {
+
+    width: 250px;
+
+    .note {
+        height: 200px;
+        overflow-y: scroll;
+        margin: 20px;
+
+        .noteHeader{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            mat-card-title {
+                margin: 0;
+            }
+
+            button {
+                padding: 0;
+            }
+        }
+    }
+}
+
+app-new-note-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+#newNoteInputBox {
+    width: min(600px, 80vw);
+
+    mat-form-field {
+        width: 100%;
+    }
+
+    mat-dialog-actions {
+        display: flex;
+        justify-content: end;
+    }
+
+    button {
+        margin-left: 10px;
+    }
+}

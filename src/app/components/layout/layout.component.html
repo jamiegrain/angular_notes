@@ -1,0 +1,18 @@
+<mat-card id="mainContainer">
+    <h1>Notes:</h1>
+    <div id="notesContainer">
+        
+        <app-note 
+            *ngFor="let note of notes"
+            title="{{note.title}}" 
+            content="{{note.content}}"
+            id="{{note.id}}"
+            >
+        </app-note>
+
+    </div>
+
+    <app-new-note-button (click)="newNote()"></app-new-note-button>
+
+</mat-card>
+
